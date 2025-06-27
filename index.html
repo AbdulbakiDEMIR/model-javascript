@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script>
+    async function loadModel() {
+        const model = await tf.loadGraphModel('tfjs_model/model.json');
+        console.log("Model yüklendi:", model);
+        // Burada model ile tahminler yapabilirsin
+    }
+    loadModel();
+    </script>
+
+</body>
+</html>
