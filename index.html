@@ -6,25 +6,30 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>TensorFlow.js Model Yükleme</h1>
     <div class="content">
-        <h1>TensorFlow.js Model Yükleme</h1>
-        <p>Model yükleniyor...</p>
     </div>
     <div>
-        <button onclick="loadModel()">Modeli Yükle</button>
+        <button id="loadModelBtn" onclick="loadModel()">Modeli Yükle</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script>
     async function loadModel() {
+        const button = document.getElementById('loadModelBtn');
+        button.disabled = true;
         const start = performance.now();
+        var content = document.querySelector('.content');
+        content.innerHTML = `<h3>Model Yükleniyor...</h3>`;
+
         const model = await tf.loadGraphModel('tfjs_model/model.json');
         const end = performance.now();
-        
-        var content = document.querySelector('.content');
-        content.innerHTML = `<h1>Model Yüklendi  (${(end - start).toFixed(2)} ms)</h1>`;
+
+        content.innerHTML = `<h3>Model Yüklendi  (${(end - start).toFixed(2)} ms)</h3>`;
 
         // Burada model ile tahminler yapabilirsin
+        button.disabled = false;
+
     }
     </script>
 
