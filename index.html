@@ -10,19 +10,22 @@
         <h1>TensorFlow.js Model Yükleme</h1>
         <p>Model yükleniyor...</p>
     </div>
+    <div>
+        <button onclick="loadModel()">Modeli Yükle</button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script>
     async function loadModel() {
+        const start = performance.now();
         const model = await tf.loadGraphModel('tfjs_model/model.json');
-        console.log("Model yüklendi:", model);
+        const end = performance.now();
         
         var content = document.querySelector('.content');
-        content.innerHTML = '<h1>Model Yüklendi</h1>';
+        content.innerHTML = `<h1>Model Yüklendi  (${(end - start).toFixed(2)} ms)</h1>`;
 
         // Burada model ile tahminler yapabilirsin
     }
-    loadModel();
     </script>
 
 </body>
