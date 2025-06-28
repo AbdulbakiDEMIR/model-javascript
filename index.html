@@ -6,14 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="content">
+        <h1>TensorFlow.js Model Yükleme</h1>
+        <p>Model yükleniyor...</p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script>
     async function loadModel() {
         const model = await tf.loadGraphModel('tfjs_model/model.json');
         console.log("Model yüklendi:", model);
-alert("model yüklendi")
+        
+        var content = document.querySelector('.content');
+        content.innerHTML = '<h1>Model Yüklendi</h1>';
+
         // Burada model ile tahminler yapabilirsin
     }
     loadModel();
