@@ -13,6 +13,7 @@
     async function loadModel() {
         const model = await tf.loadGraphModel('tfjs_model/model.json');
         console.log("Model yüklendi:", model);
+alert("model yüklendi")
         // Burada model ile tahminler yapabilirsin
     }
     loadModel();
