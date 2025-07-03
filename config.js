@@ -1,7 +1,7 @@
 // config.js
 export const config =  {
-    // basePath: "/dinamic-web-app/",
-    basePath: "/",
+    basePath: "/model-javascript/",
+    // basePath: "/",
     scripts: [
         { path: "js/script.js", type: "module" },
         { path: "app.js", type: "module" }
