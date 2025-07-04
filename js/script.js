@@ -2,6 +2,8 @@ import {config, pageQueryParameterKey } from "../config.js"
 import { renderApp } from "../routing/routing.js";
 
 
+
+
 window.changePage = function (newPage) {
     if(newPage===""){
         history.pushState(null, "", config.basePath);

@@ -5,7 +5,8 @@ function createPageComponent(){
         <div class="main-bg">
             <div class="full-center">
                 <div class="transparent-card">
-                    <h1 class="main-title">Welcome to the App Page</h1>
+                    <h1 class="main-title">Welcome to the Category Page</h1>
+                    <button class="btn btn-danger" onclick="changePage('')">Go to Main Page</button>
                 </div>
             </div>
         </div>
@@ -13,7 +14,7 @@ function createPageComponent(){
 }
 
 
-export function AppPage() {
+export function AppCategoryPage() {
     document.getElementById('app').innerHTML = `
         ${createPageComponent()}
     `;
